@@ -1,0 +1,39 @@
+body{
+  background: #252427;
+  color: white !important;
+
+  /* font-family: 'Anton', sans-serif; */
+  /* font-family: 'Baloo Bhai', cursive; */
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: white;
+  text-align: center;
+  font-family: 'Girassol', cursive;
+}
+
+input, input::placeholder{
+  background-color: #43434c !important;
+  color: white;
+}
+
+form{
+  margin: 40 0 0 0;
+}
+
+#result{
+  font-size: 23px;
+  text-align: center;
+  color: #26a69a;
+  font-weight: 700;
+}
+
+#result-unit{
+  color: #26a69a;
+}
+
+.widget{
+  margin-top: 20%;
+  background-color: #43434c;
+  border-radius: 5px;
+}
