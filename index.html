@@ -52,6 +52,23 @@
     </div>
   </body>
   <script>
+
+    var singularFormDictionary = {
+      Vodenice: "Vodenica",
+      Kamenovi: "Kamen",
+      Litre: "Litra",
+      Dani: "Dan",
+      Drami: "Dram"
+    };
+
+    var pluralFormDictionary = {
+      Vodenice: "Vodenice",
+      Kamenovi: "Kamenova",
+      Litre: "Litre",
+      Dani: "Dana",
+      Drami: "Drama"
+    };
+
     function convert(){
 
       var value = document.getElementById('input').value;
@@ -74,14 +91,31 @@
           for(var i=from-1;i>=to;i--){
               res = res/coef[i];}
           }
-      document.getElementById('result').innerHTML = Math.round(res * 100) / 100 + " ";
-      document.getElementById('result-unit').innerHTML = "(" + getResultUnit() + ")";
+
+      var roundedRes = Math.round(Math.round(res * 100) / 100);
+      document.getElementById('result').innerHTML = roundedRes + " ";
+
+      var resultUnit = getResultUnit(roundedRes);
+      document.getElementById('result-unit').innerHTML = "(" + resultUnit + ")";
     };
 
-    function getResultUnit(){
+    function getResultUnit(count){
       var select = document.getElementById('to');
       var selectedOption = select.options[select.selectedIndex].text;
+      
+      if (count == 1)
+        selectedOption = getCorrectUnitForm(selectedOption, singularFormDictionary);
+      else
+        selectedOption = getCorrectUnitForm(selectedOption, pluralFormDictionary);
+      
       return selectedOption;
+    }
+
+    function getCorrectUnitForm(unit, dictionary){
+      if (dictionary.hasOwnProperty(unit))
+        return dictionary[unit];
+      else
+        return unit;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
