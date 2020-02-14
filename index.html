@@ -16,11 +16,11 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input id="input" type="text" autocomplete="off">
+                <input id="input" type="text" autocomplete="off" onchange=convert()>
                 <label for="value">Količina</label>
               </div>
               <div class="input-field col s12">
-                <select id="from">
+                <select id="from" onchange=convert()>
                   <option value="0">Vodenice</option>
                   <option value="1">Kamenovi</option>
                   <option value="2">Litre</option>
@@ -30,7 +30,7 @@
                 <label>Iz jedinice:</label>
               </div>
               <div class="input-field col s12">
-                <select id="to">
+                <select id="to" onchange=convert()>
                   <option value="0">Vodenice</option>
                   <option value="1">Kamenovi</option>
                   <option value="2">Litre</option>
