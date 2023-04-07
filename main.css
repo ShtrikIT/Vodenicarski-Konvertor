@@ -1,5 +1,8 @@
 body{
-  background: #252427;
+  background-image: url('background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white !important;
 
   /* font-family: 'Anton', sans-serif; */
